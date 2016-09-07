@@ -48,6 +48,7 @@ public class TabFragment extends Fragment {
         switch (page){
             case 1:
                 textView.setBackgroundColor(Color.parseColor("#FF0000"));
+                textView.setBackground(getActivity().getResources().getDrawable(R.drawable.first_select));
                 break;
               case 2:
                 textView.setBackgroundColor(Color.parseColor("#00FF00"));

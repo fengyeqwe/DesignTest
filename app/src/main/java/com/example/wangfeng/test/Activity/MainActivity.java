@@ -1,4 +1,4 @@
-package com.example.wangfeng.test;
+package com.example.wangfeng.test.Activity;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -7,6 +7,9 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
+
+import com.example.wangfeng.test.R;
+
 /*
 * 动态申请权限
 * */

@@ -5,6 +5,8 @@ import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
+import android.util.Log;
+import android.view.MotionEvent;
 
 import com.example.wangfeng.test.Adapter.CollAdapter;
 import com.example.wangfeng.test.Adapter.CollItemDecoration;
@@ -28,6 +30,10 @@ public class CollActivity extends AppCompatActivity {
     CollapsingToolbarLayout mColltoolbar;
     @BindView(R.id.recycle)
     RecyclerView mRecycle;
+    private float startX;
+    private float startY;;
+    private float endX;;
+    private float endY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,5 +60,30 @@ public class CollActivity extends AppCompatActivity {
         //设置分隔线
         mRecycle.addItemDecoration(new CollItemDecoration(this));
 
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {//向左滑動退出
+
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                startX=event.getX();
+                startY=event.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.i("TAG", "onTouchEvent: ");
+                break;
+            case MotionEvent.ACTION_UP:
+                endX=event.getX();
+                endY=event.getY();
+                // Toast.makeText(SnackbarActivity.this,(startX-endX)+" " +(startY-endY), Toast.LENGTH_SHORT).show();
+                if (startX>endX&&(startX-endX)>Math.abs(startY-endY)){
+
+                    finish();
+
+                }
+                break;
+        }
+
+        return false;
     }
 }

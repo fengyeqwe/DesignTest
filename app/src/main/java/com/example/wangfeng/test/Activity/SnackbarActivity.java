@@ -9,10 +9,13 @@ import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.wangfeng.test.R;
 
@@ -36,6 +39,10 @@ public class SnackbarActivity extends AppCompatActivity {
     FloatingActionButton mFloatBtn;
     @BindView(R.id.cloud)
     View mCloud;
+    float startX=0;
+    float startY=0;
+    float endX=0;
+    float endY=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,5 +134,30 @@ public class SnackbarActivity extends AppCompatActivity {
         animation.setFillAfter(false);
         mCloud.startAnimation(animation);
         mCloud.setVisibility(View.INVISIBLE);
+    }
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {//向左滑動退出
+
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                startX=event.getX();
+                startY=event.getY();
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.i("TAG", "onTouchEvent: ");
+                break;
+            case MotionEvent.ACTION_UP:
+                endX=event.getX();
+                endY=event.getY();
+               // Toast.makeText(SnackbarActivity.this,(startX-endX)+" " +(startY-endY), Toast.LENGTH_SHORT).show();
+                if (startX>endX&&(startX-endX)>Math.abs(startY-endY)){
+                    Toast.makeText(SnackbarActivity.this,"true", Toast.LENGTH_SHORT).show();
+                    finish();
+
+                }
+                break;
+        }
+
+        return super.onTouchEvent(event);
     }
 }

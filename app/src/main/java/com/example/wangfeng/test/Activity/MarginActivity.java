@@ -85,15 +85,15 @@ public class MarginActivity extends AppCompatActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-startActivity(new Intent(MarginActivity.this,SnackbarActivity.class));
+            startActivity(new Intent(MarginActivity.this, SnackbarActivity.class));
         } else if (id == R.id.nav_gallery) {
-            startActivity(new Intent(MarginActivity.this,CollActivity.class));
+            startActivity(new Intent(MarginActivity.this, CollActivity.class));
         } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
+            startActivity(new Intent(MarginActivity.this, FitstActivity.class));
+        } else if (id == R.id.nav_Reqyest) {
+            startActivity(new Intent(MarginActivity.this,RequestActivity.class));
+        } else if (id == R.id.nav_design) {
+            startActivity(new Intent(MarginActivity.this,DesignActivity.class));
         } else if (id == R.id.nav_send) {
 
         }

@@ -1,4 +1,4 @@
-package com.example.wangfeng.test;
+package com.example.wangfeng.test.Activity;
 
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.example.wangfeng.test.Adapter.TabAdapter;
+import com.example.wangfeng.test.R;
 
 import java.util.List;
 

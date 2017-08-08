@@ -23,7 +23,7 @@ public class TabFragment extends Fragment {
     @BindView(R.id.textView)
     TextView textView;
     private View view;
-    public static final String ARGS_PAGE = "args_page";
+    public static final String ARGS_PAGE = "page";
     private int page;
 
     public static TabFragment newInstance(int page) {
@@ -46,25 +46,29 @@ public class TabFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_tab, null, false);
         ButterKnife.bind(this, view);
         switch (page){
-            case 1:
-                textView.setBackgroundColor(Color.parseColor("#FF0000"));
+            case 0:
                 textView.setBackground(getActivity().getResources().getDrawable(R.drawable.first_select));
                 break;
-              case 2:
+              case 1:
                 textView.setBackgroundColor(Color.parseColor("#00FF00"));
                 break;
-              case 3:
+              case 2:
                 textView.setBackgroundColor(Color.parseColor("#0000FF"));
                 break;
-              case 4:
+              case 3:
                 textView.setBackgroundColor(Color.parseColor("#F0FF00"));
                 break;
             default:
+                textView.setBackgroundColor(Color.parseColor("#F0FF00"));
                 break;
         }
 
         return view;
     }
 
-
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        textView.setText("第 "+page+" 页");
+    }
 }

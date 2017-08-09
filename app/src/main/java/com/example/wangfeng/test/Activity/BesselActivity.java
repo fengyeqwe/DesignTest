@@ -24,6 +24,6 @@ public class BesselActivity extends AppCompatActivity {
 
     @OnClick(R.id.start)
     public void onClick() {
-        mActivityBessel.addLove();
+        mActivityBessel.addLove(20);
     }
 }

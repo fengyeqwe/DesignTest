@@ -2,6 +2,7 @@ package com.example.wangfeng.test.Activity;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
@@ -31,8 +32,8 @@ public class CollActivity extends AppCompatActivity {
     @BindView(R.id.recycle)
     RecyclerView mRecycle;
     private float startX;
-    private float startY;;
-    private float endX;;
+    private float startY;
+    private float endX;
     private float endY;
 
     @Override
@@ -53,8 +54,8 @@ public class CollActivity extends AppCompatActivity {
 
     private void initView() {
         mColltoolbar.setTitle("CollapsingToolbarLayout");
-        mColltoolbar.setExpandedTitleColor(getResources().getColor(R.color.Green));
-        mColltoolbar.setCollapsedTitleTextColor(getResources().getColor(R.color.White));
+        mColltoolbar.setExpandedTitleColor(ContextCompat.getColor(this,R.color.colorAccent));
+        mColltoolbar.setCollapsedTitleTextColor(ContextCompat.getColor(this,R.color.white));
         mRecycle.setLayoutManager(new StaggeredGridLayoutManager(4,StaggeredGridLayoutManager.VERTICAL));
         mRecycle.setAdapter(new CollAdapter(initData()));
         //设置分隔线

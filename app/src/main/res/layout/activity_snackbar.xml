@@ -19,7 +19,7 @@
     android:id="@+id/snackbar_btn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Snackbar"/>
+    android:text="@string/snackbar"/>
     <android.support.design.widget.TextInputLayout
         android:id="@+id/snackbar_edit"
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="please write"/>
+            android:hint="@string/please_write"/>
     </android.support.design.widget.TextInputLayout>
     <android.support.design.widget.TextInputEditText
         android:id="@+id/edit2"
@@ -38,7 +38,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/login"
-        app:backgroundTint="@color/Green"
+        app:backgroundTint="@color/colorAccent"
         android:textAlignment="center"
 
         app:fabSize="auto"/>
@@ -48,6 +48,6 @@
         android:visibility="invisible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/White"
+        android:background="@color/white"
         />
 </RelativeLayout>

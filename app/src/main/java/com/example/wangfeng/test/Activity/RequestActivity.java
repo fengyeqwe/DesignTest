@@ -3,6 +3,7 @@ package com.example.wangfeng.test.Activity;
 import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.CheckableImageButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -22,13 +23,13 @@ import butterknife.OnClick;
 public class RequestActivity extends AppCompatActivity {
 
     private static final int REQUEST_CODE_READ_SMS = 123;//权限的标记符
-    @BindView(R.id.floatBtn)
+    @BindView(R.id.float_btn)
     CheckableImageButton mFloatBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_request);
         ButterKnife.bind(this);
 
     }
@@ -44,7 +45,7 @@ public class RequestActivity extends AppCompatActivity {
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {//动态申请权限后回调该方法
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {//动态申请权限后回调该方法
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         handleGrantResults(requestCode, grantResults);
     }
@@ -61,7 +62,7 @@ public class RequestActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.floatBtn)
+    @OnClick(R.id.float_btn)
     public void onClick() {
         Snackbar.make(mFloatBtn, "click", Snackbar.LENGTH_LONG).setDuration(2000).show();
         requestContactPermission();

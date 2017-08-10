@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -55,6 +56,7 @@ public class SnackbarActivity extends AppCompatActivity {
     private void initView() {
         final TextInputLayout textInputLayout = (TextInputLayout) findViewById(R.id.snackbar_edit);
         EditText editText = textInputLayout.getEditText();
+        if(editText!=null)
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence sequence, int i, int i1, int i2) {
@@ -111,10 +113,10 @@ public class SnackbarActivity extends AppCompatActivity {
                         .setAction("delete", new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                mSnackbarBtn.setBackgroundColor(getResources().getColor(R.color.Green));
+                                mSnackbarBtn.setBackgroundColor(ContextCompat.getColor(getBaseContext(),R.color.colorAccent));
                             }
                         })
-                        .setActionTextColor(getResources().getColor(R.color.Green))
+                        .setActionTextColor(ContextCompat.getColor(getBaseContext(),R.color.colorAccent))
                         .setDuration(6000)
                         .show();
                 break;

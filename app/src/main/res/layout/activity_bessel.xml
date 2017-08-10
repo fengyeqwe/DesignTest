@@ -11,9 +11,5 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
-    android:text="start"/>
-    <ImageView
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        tools:src="@drawable/love"/>
+    android:text="@string/start"/>
 </com.example.wangfeng.test.MyViews.LoveLayout>

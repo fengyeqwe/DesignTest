@@ -14,3 +14,5 @@
 5. 6.0权限的使用
 
 6. snackbar,floatbutton,雾化效果
+
+7. 图片OOM处理

@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
         data.add(new ActivityItem("刷新加载", FitstActivity.class));
         data.add(new ActivityItem("权限6.0",RequestActivity.class));
         data.add(new ActivityItem("snackbar",SnackbarActivity.class));
+        data.add(new ActivityItem("图片OOM处理",ImageActivity.class));
+        data.add(new ActivityItem("多级列表(unfinished)",MoreListActivity.class));
         return data;
     }
 }

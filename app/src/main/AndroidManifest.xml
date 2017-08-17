@@ -33,6 +33,10 @@
         </activity>
         <activity android:name=".Activity.BesselActivity">
         </activity>
+        <activity android:name=".Activity.MoreListActivity">
+        </activity>
+        <activity android:name=".Activity.ImageActivity">
+        </activity>
     </application>
 
 </manifest>
